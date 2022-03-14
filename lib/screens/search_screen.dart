@@ -96,6 +96,12 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: CircularProgressIndicator(),
                   );
                 }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
                 return StaggeredGridView.countBuilder(
                   crossAxisCount: 3,
                   itemCount: (snapshot.data! as dynamic).docs.length,
