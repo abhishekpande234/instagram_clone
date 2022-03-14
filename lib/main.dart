@@ -56,10 +56,10 @@ class MyApp extends StatelessWidget {
           print(snapshot.hasData);
 
             if (snapshot.connectionState == ConnectionState.active) {
-              print(snapshot.connectionState == ConnectionState.active);
-              print("___________________________________________________________________________________________________________________");
+           //   print(snapshot.connectionState == ConnectionState.active);
+              // print("___________________________________________________________________________________________________________________");
               if(snapshot.hasData){
-                print(snapshot.hasData);
+                // print(snapshot.hasData);
                   return const ResponsiveLayout(mobileScreenLayout: MobileScreenLayout(), webScreenLayout: WebScreenLayout(),);
               }else{
                 return Center(child : Text('${snapshot.error}'));

@@ -20,7 +20,7 @@ class MobileScreenLayout extends StatefulWidget {
 }
 
 class _MobileScreenLayoutState extends State<MobileScreenLayout> {
-int page = 0;
+int _page = 0;
 /*  Storing some data from Firebase Document into variable*/
 // String username = "";
   // @override
@@ -41,8 +41,6 @@ int page = 0;
   // }
 /*  Storing some data from Firebase Document into variable*/
   late PageController pageController;
-
-
 
   @override
   void initState(){
@@ -65,7 +63,7 @@ int page = 0;
 
   onPageChanged(int page){
     setState(() {
-      page = page;
+      _page = page;
     });
   }
 
@@ -86,7 +84,7 @@ int page = 0;
     return Scaffold(
 
      bottomNavigationBar: BottomNavigationBar(
-       backgroundColor: mobileBackgroundColor,
+       backgroundColor: Colors.black,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             // activeIcon: Icon(Icons.home_outlined , color: Colors.white),
@@ -130,7 +128,7 @@ int page = 0;
           children: homeScreenItems,
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
-          onPageChanged: onPageChanged,
+          // onPageChanged: onPageChanged(_page),
 
         ),
 
